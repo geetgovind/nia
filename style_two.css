@@ -1,0 +1,65 @@
+.keyword-suggestions,
+.question-suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+    border: 1px solid #ccc;
+    display: none; /* Hidden by default */
+    max-height: 100px;
+    overflow-y: auto;
+    background: white;
+    position: relative;
+    z-index: 10; /* Ensure suggestions are above other elements */
+}
+
+.keyword-suggestions li,
+.question-suggestions li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.keyword-suggestions li:hover,
+.question-suggestions li:hover {
+    background: #f0f0f0;
+}
+
+.suggestion-container {
+    position: relative;
+    margin-top: 5px;
+}
+
+.suggestion-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    margin-top: 10;
+    padding: 0; /* No padding needed */
+    width: calc(100% - 65px);
+    max-height: 150px;
+    overflow-x: auto;
+    z-index: 10;
+    display: none;
+    bottom: 100%;
+}
+
+.suggestion-dropdown li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.suggestion-dropdown li:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+
+
+  /* Scrollable questions container */
+  #questions-container {
+    max-height: 71px; /* Limit height */
+    overflow-y: auto; /* Allow vertical scrolling */
+   
+   
+}
+
+
