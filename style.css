@@ -7,7 +7,7 @@
   font-family: "Open Sans", sans-serif;
 }
 body {
-  background: #e3f2fd;
+  background: #71b9f0;
 }
 .chatbot-toggler {
   position: fixed;
@@ -161,13 +161,13 @@ header h2 {
 }
 .chat-input span {
   align-self: flex-end;
-  color: #724ae8;
+  color: #3d52a1;
   cursor: pointer;
   height: 55px;
   display: flex;
   align-items: center;
   visibility: hidden;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 .chat-input textarea:valid ~ span {
   visibility: visible;
