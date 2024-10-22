@@ -27,7 +27,7 @@ const fetchChatTags = async () => {
 
 // Populate the select dropdown with fetched chat tags
 const populateTagsDropdown = (data) => {
-    tagsSelect.innerHTML = '<option selected>Select Smart Tags</option>';
+    tagsSelect.innerHTML = '<option selected>Search using Smart Tags</option>';
 
     data.chattags_keywords.forEach(tag => {
         const optionElement = document.createElement("option");
@@ -70,14 +70,8 @@ const filterQuestionsByTag = (tagId) => {
     // Create buttons for each filtered question
     filteredQuestions.forEach(question => {
         const button = document.createElement("button");
-        button.classList.add("btn","btn-success");
-       
-        // button.style.margin = "5px 0";
-        // button.textContent = question.chattag_ques;
-        // questionsContainer.appendChild(button);
-
-
-        button.style.marginBottom = "10px"; // Space between buttons
+        button.classList.add("btn","btn-sm", "btn-light");
+        button.style.margin = "5px"; // Space between buttons
         button.textContent = question.chattag_ques;
         button.addEventListener('click', () => {
             messageInput.value = question.chattag_ques; // Set the input value to the question when clicked
