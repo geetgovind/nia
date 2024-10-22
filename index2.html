@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Toggle Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-theme {
+            background-color: #343a40; /* Dark gray */
+            color: white; /* Text color for contrast */
+        }
+        .card {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-theme .card {
+            background-color: #495057; /* Darker card background */
+            border: none; /* Remove card border */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Dark Theme Toggle with Bootstrap</h1>
+        <div class="text-center mb-4">
+            <button id="theme-toggle" class="btn btn-primary">Toggle Dark Theme</button>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is a simple card demonstrating theme toggling.</p>
+                        <a href="#" class="btn btn-light">Button</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            toggleButton.textContent = document.body.classList.contains('dark-theme') ? 'Toggle Light Theme' : 'Toggle Dark Theme';
+        });
+    </script>
+</body>
+</html>
