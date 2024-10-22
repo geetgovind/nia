@@ -121,11 +121,11 @@ header h2 {
 }
 .chatbox .chat p {
   white-space: pre-wrap;
-  padding: 10px 10px;
+  padding: 12px 16px;
   border-radius: 10px 10px 0 10px;
   max-width: 90%;
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   background: #a489f8;
 }
 .chatbox .incoming p {
