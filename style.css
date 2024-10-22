@@ -43,7 +43,7 @@ body.show-chatbot .chatbot-toggler span:last-child {
   position: fixed;
   right: 35px;
   bottom: 90px;
-  width: 420px;
+  width: 400px;
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -60,12 +60,16 @@ body.show-chatbot .chatbot {
   pointer-events: auto;
   transform: scale(1);
 }
+b,
+.nia {
+  color: #aba0e1;
+}
 .chatbot header {
-  padding: 16px 0;
+  padding: 10px 0;
   position: relative;
   text-align: center;
   color: #fff;
-  background: #f7df92;
+  background: #3d52a1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .chatbot header span {
@@ -77,11 +81,11 @@ body.show-chatbot .chatbot {
   transform: translateY(-50%);
 }
 header h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 .chatbot .chatbox {
   overflow-y: auto;
-  height: 510px;
+  height: 520px;
   padding: 30px 20px 100px;
 }
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
@@ -111,18 +115,18 @@ header h2 {
   text-align: center;
   line-height: 32px;
   align-self: flex-end;
-  background: #724ae8;
+  background: #3d52a1;
   border-radius: 4px;
   margin: 0 10px 7px 0;
 }
 .chatbox .chat p {
   white-space: pre-wrap;
-  padding: 12px 16px;
+  padding: 10px 10px;
   border-radius: 10px 10px 0 10px;
-  max-width: 75%;
+  max-width: 90%;
   color: #fff;
-  font-size: 0.95rem;
-  background: #724ae8;
+  font-size: 0.85rem;
+  background: #a489f8;
 }
 .chatbox .incoming p {
   border-radius: 10px 10px 10px 0;
@@ -163,7 +167,7 @@ header h2 {
   display: flex;
   align-items: center;
   visibility: hidden;
-  font-size: 1.35rem;
+  font-size: 1rem;
 }
 .chat-input textarea:valid ~ span {
   visibility: visible;
