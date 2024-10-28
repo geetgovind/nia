@@ -1,13 +1,22 @@
+/* The provided code is a CSS stylesheet that styles a chatbot interface. Here is a breakdown of what
+the code does: */
 /* Import Google font - Open Sans */
 @import url("https://fonts.googleapis.com/css2?family=OpenSans:wght@400;500;600&display=swap");
+/* The `*` selector in CSS targets all elements on the page. The properties being set in this rule are: */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+/* The `body` selector in CSS is targeting the `<body>` element of the HTML document. The property
+being set in this rule is `background` with a value of `#71b9f0`, which is a hexadecimal color code.
+This line of code is setting the background color of the entire webpage to a light blue color
+specified by the hex code `#71b9f0`. */
 body {
   background: #71b9f0;
+  /* The code block you provided is styling the chatbot toggler button. Here's a breakdown of what each
+property is doing: */
 }
 .chatbot-toggler {
   position: fixed;
@@ -25,6 +34,8 @@ body {
   background: #b092f7;
   transition: all 0.2s ease;
 }
+/* This set of CSS rules is responsible for styling the chatbot toggler button when the chatbot
+interface is shown on the webpage. Here's a breakdown of what each part does: */
 body.show-chatbot .chatbot-toggler {
   transform: rotate(90deg);
 }
@@ -39,6 +50,8 @@ body.show-chatbot .chatbot-toggler span:first-child {
 body.show-chatbot .chatbot-toggler span:last-child {
   opacity: 1;
 }
+/* The CSS code you provided is styling the chatbot interface. Here's a breakdown of what the
+`.chatbot` class and related rules are doing: */
 .chatbot {
   position: fixed;
   right: 35px;
@@ -55,6 +68,8 @@ body.show-chatbot .chatbot-toggler span:last-child {
     0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
 }
+/* The CSS code snippet you provided is targeting the styling of the chatbot interface when it is shown
+on the webpage. */
 body.show-chatbot .chatbot {
   opacity: 1;
   pointer-events: auto;
@@ -64,6 +79,8 @@ b,
 .nia {
   color: #aba0e1;
 }
+/* This set of CSS rules is styling the header section of the chatbot interface. Here's a breakdown of
+what each part is doing: */
 .chatbot header {
   padding: 10px 0;
   position: relative;
@@ -72,6 +89,8 @@ b,
   background: #3d52a1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+/* This CSS code snippet is styling a specific element within the chatbot interface. Here's a breakdown
+of what each property is doing: */
 .chatbot header span {
   position: absolute;
   right: 15px;
@@ -88,111 +107,162 @@ header h2 {
   height: 520px;
   padding: 30px 20px 100px;
 }
+/* The provided CSS code snippet is targeting the styling of scrollbars within elements with the
+classes `.chatbox` and `textarea` specifically for webkit browsers (such as Chrome and Safari).
+Here's a breakdown of what each part of the code is doing: */
+/* 
+  The following CSS rules are styling the scrollbars within elements with the classes `.chatbox` and `textarea` 
+  specifically for webkit browsers (such as Chrome and Safari).
+*/
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+  /* 
+    Set the width of the scrollbar to 6 pixels.
+  */
   width: 6px;
 }
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+  /* 
+    Set the background color of the scrollbar track to white and add a border radius of 25 pixels.
+  */
   background: #fff;
   border-radius: 25px;
 }
 .chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+  /* 
+    Set the background color of the scrollbar thumb to a light gray color and add a border radius of 25 pixels.
+  */
   background: #ccc;
   border-radius: 25px;
 }
+
+/* 
+  The following CSS rules are styling the chat messages within the chatbox.
+*/
 .chatbox .chat {
+  /* 
+    Display the chat messages as a flex container and remove the list-style.
+  */
   display: flex;
   list-style: none;
 }
 .chatbox .outgoing {
+  /* 
+    Add a margin of 20 pixels to the top and bottom of the outgoing chat messages and justify the content to the end.
+  */
   margin: 20px 0;
   justify-content: flex-end;
 }
+/* Styles for the incoming message's user icon */
 .chatbox .incoming span {
-  width: 32px;
-  height: 32px;
-  color: #fff;
-  cursor: default;
-  text-align: center;
-  line-height: 32px;
-  align-self: flex-end;
-  background: #3d52a1;
-  border-radius: 4px;
-  margin: 0 10px 7px 0;
+  width: 32px; /* Set the width of the icon */
+  height: 32px; /* Set the height of the icon */
+  color: #fff; /* Set the text color to white */
+  cursor: default; /* Set the cursor to default when hovering */
+  text-align: center; /* Center the text within the icon */
+  line-height: 32px; /* Align text vertically within the icon */
+  align-self: flex-end; /* Align the icon to the end of the flex container */
+  background: #3d52a1; /* Set the background color of the icon */
+  border-radius: 4px; /* Round the corners of the icon */
+  margin: 0 10px 7px 0; /* Set margin around the icon */
 }
+
+/* Styles for the chat message paragraphs */
 .chatbox .chat p {
-  white-space: pre-wrap;
-  padding: 12px 16px;
-  border-radius: 10px 10px 0 10px;
-  max-width: 90%;
-  color: #fff;
-  font-size: 0.95rem;
-  background: #a489f8;
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+  padding: 12px 16px; /* Set padding inside the message box */
+  border-radius: 10px 10px 0 10px; /* Round the top corners of the message box */
+  max-width: 90%; /* Limit the maximum width of the message box */
+  color: #fff; /* Set the text color to white */
+  font-size: 0.95rem; /* Set the font size */
+  background: #a489f8; /* Set the background color of the message */
 }
+
+/* Specific styles for incoming messages */
 .chatbox .incoming p {
-  border-radius: 10px 10px 10px 0;
+  border-radius: 10px 10px 10px 0; /* Round the top corners of incoming messages */
 }
+
+/* Styles for error messages */
 .chatbox .chat p.error {
-  color: #721c24;
-  background: #f8d7da;
+  color: #721c24; /* Set the text color for error messages */
+  background: #f8d7da; /* Set the background color for error messages */
 }
+
+/* Styles for incoming message text */
 .chatbox .incoming p {
-  color: #000;
-  background: #f2f2f2;
+  color: #000; /* Set the text color for incoming messages to black */
+  background: #f2f2f2; /* Set the background color for incoming messages */
 }
+
+/* Styles for the chat input area */
 .chatbot .chat-input {
-  display: flex;
-  gap: 5px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: #fff;
-  padding: 3px 20px;
-  border-top: 1px solid #ddd;
+  display: flex; /* Use flexbox for layout */
+  gap: 5px; /* Set space between input elements */
+  position: absolute; /* Position the input area at the bottom */
+  bottom: 0; /* Align the input area to the bottom of the chatbox */
+  width: 100%; /* Set the width to fill the chatbox */
+  background: #fff; /* Set the background color of the input area */
+  padding: 3px 20px; /* Set padding inside the input area */
+  border-top: 1px solid #ddd; /* Add a top border to the input area */
 }
+
+/* Styles for the textarea in the chat input area */
 .chat-input textarea {
-  height: 55px;
-  width: 100%;
-  border: none;
-  outline: none;
-  resize: none;
-  max-height: 180px;
-  padding: 15px 15px 15px 0;
-  font-size: 0.95rem;
+  height: 55px; /* Set the height of the textarea */
+  width: 100%; /* Set the width to fill the input area */
+  border: none; /* Remove the border */
+  outline: none; /* Remove the outline on focus */
+  resize: none; /* Prevent resizing of the textarea */
+  max-height: 180px; /* Limit the maximum height of the textarea */
+  padding: 15px 15px 15px 0; /* Set padding inside the textarea */
+  font-size: 0.95rem; /* Set the font size */
 }
+
+/* Styles for the send button in the chat input area */
 .chat-input span {
-  align-self: flex-end;
-  color: #3d52a1;
-  cursor: pointer;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  visibility: hidden;
-  font-size: 1.5rem;
+  align-self: flex-end; /* Align the button to the end of the flex container */
+  color: #3d52a1; /* Set the text color of the button */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  height: 55px; /* Set the height of the button */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center the button content vertically */
+  visibility: hidden; /* Initially hide the button */
+  font-size: 1.5rem; /* Set the font size of the button */
 }
 .chat-input textarea:valid ~ span {
   visibility: visible;
 }
 
+/* This media query applies styles when the viewport width is 490 pixels or less */
 @media (max-width: 490px) {
+  /* Style for the chatbot toggle button */
   .chatbot-toggler {
-    right: 20px;
-    bottom: 20px;
+    right: 20px; /* Position the toggle button 20 pixels from the right */
+    bottom: 20px; /* Position the toggle button 20 pixels from the bottom */
   }
+
+  /* Style for the main chatbot container */
   .chatbot {
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    border-radius: 0;
-    width: 100%;
+    right: 0; /* Align the chatbot container to the right edge of the viewport */
+    bottom: 0; /* Align the chatbot container to the bottom edge of the viewport */
+    height: 100%; /* Set the height of the chatbot to fill the entire height of the viewport */
+    border-radius: 0; /* Remove any border radius for a square appearance */
+    width: 100%; /* Set the width of the chatbot to fill the entire width of the viewport */
   }
+
+  /* Style for the chatbox inside the chatbot */
   .chatbot .chatbox {
-    height: 90%;
-    padding: 25px 15px 100px;
+    height: 90%; /* Set the height of the chatbox to 90% of the chatbot's height */
+    padding: 25px 15px 100px; /* Add padding: 25px on top, 15px on left/right, and 100px on bottom */
   }
+
+  /* Style for the chat input area */
   .chatbot .chat-input {
-    padding: 5px 15px;
+    padding: 5px 15px; /* Add padding: 5px on top/bottom and 15px on left/right */
   }
+
+  /* Style for the header span in the chatbot */
   .chatbot header span {
-    display: block;
+    display: block; /* Make the header span a block element, allowing it to take full width */
   }
 }
