@@ -253,6 +253,7 @@ Here's a breakdown of what each part of the code is doing: */
   /* Style for the chatbox inside the chatbot */
   .chatbot .chatbox {
     height: 90%; /* Set the height of the chatbox to 90% of the chatbot's height */
+    max-height: 80vh;/* Added this to make  sure the chatbox doesn't exceed the viewport height */
     padding: 25px 15px 100px; /* Add padding: 25px on top, 15px on left/right, and 100px on bottom */
   }
 
