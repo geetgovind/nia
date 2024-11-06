@@ -15,11 +15,9 @@ const fetchChatTags = async () => {
         },
       }
     );
-
     if (!response.ok) {
       throw new Error("Failed to fetch chat tags");
     }
-
     const data = await response.json();
     populateTagsDropdown(data);
   } catch (error) {
@@ -30,7 +28,6 @@ const fetchChatTags = async () => {
 // Populate the select dropdown with fetched chat tags
 const populateTagsDropdown = (data) => {
   tagsSelect.innerHTML = "<option selected>Search using Smart Tags</option>";
-
   data.chattags_keywords.forEach((tag) => {
     const optionElement = document.createElement("option");
     optionElement.value = tag.chatags_id;
@@ -52,11 +49,9 @@ const fetchChatQuestions = async () => {
         },
       }
     );
-
     if (!response.ok) {
       throw new Error("Failed to fetch chat questions");
     }
-
     const data = await response.json();
     chattagsQuestions = data.chattags_questions; // Store fetched questions
   } catch (error) {
@@ -84,11 +79,9 @@ const filterQuestionsByTag = (tagId) => {
       handleChat(); // Send the chat message immediately
       // Reset the select tag
       tagsSelect.selectedIndex = 0; // Reset to "Select Smart Tags"
-
       // Hide question buttons
       questionsContainer.innerHTML = ""; // Clear the question buttons
     });
-
     questionsContainer.appendChild(button);
   });
 };
@@ -130,7 +123,6 @@ const fetchKeywords = async () => {
         xapi: "1234",
       },
     });
-
     if (response.ok) {
       const data = await response.json();
       keywordsData = data; // Update the global keywordsData
@@ -152,7 +144,6 @@ const fetchQuestions = async () => {
         xapi: "1234",
       },
     });
-
     if (response.ok) {
       const data = await response.json();
       questionsData = data; // Update the global questionsData
@@ -182,7 +173,6 @@ const generateResponse = async (chatElement) => {
   const apiUrl =
     "http://192.168.9.241:8000/get_response/?msg=" +
     encodeURIComponent(userMessage);
-
   try {
     const response = await fetch(apiUrl, {
       method: "GET",
@@ -191,22 +181,18 @@ const generateResponse = async (chatElement) => {
         xapi: "1234",
       },
     });
-
     if (!response.ok) {
       const errorText = await response.text();
       messageElement.textContent = `Error: ${errorText}`;
       return;
     }
-
     const reader = response.body.getReader();
     const decoder = new TextDecoder("utf-8");
     let responseText = "";
     messageElement.textContent = "";
-
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
-
       const chunk = decoder.decode(value, { stream: true });
       responseText += chunk;
       messageElement.innerHTML = responseText;
@@ -223,13 +209,10 @@ const generateResponse = async (chatElement) => {
 
 const handleChat = () => {
   userMessage = messageInput.value.trim();
-
   if (!userMessage) return;
-
   messageInput.value = "";
   chatbox.appendChild(createChatLi(userMessage, "outgoing"));
   chatbox.scrollTo(0, chatbox.scrollHeight);
-
   setTimeout(() => {
     const incomingChatLi = createChatLi("Thinking...", "incoming");
     chatbox.appendChild(incomingChatLi);
@@ -241,22 +224,18 @@ const handleChat = () => {
 const showSuggestions = () => {
   const inputText = messageInput.value.trim().toLowerCase();
   suggestionDropdown.innerHTML = ""; // Clear previous suggestions
-
   if (inputText.length < 1) {
     suggestionDropdown.style.display = "none"; // Hide if input is empty
     return;
   }
-
   // Extract key IDs from keywords that match the input text
   const matchingKeywordIds = keywordsData.keywords
     .filter((keyword) => inputText.includes(keyword.keywords.toLowerCase()))
     .map((keyword) => keyword.key_id);
-
   // Get matching questions based on the extracted key IDs
   const matchingQuestions = questionsData.questions.filter((question) =>
     matchingKeywordIds.includes(question.key_id)
   );
-
   // Display the suggestions
   if (matchingQuestions.length > 0) {
     matchingQuestions.forEach((suggestion) => {
