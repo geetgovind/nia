@@ -119,8 +119,6 @@ let userMessage = null;
 
 
 
-
-
 // Function to fetch keywords from the API
 const fetchKeywords = async () => {
     try {

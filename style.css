@@ -93,7 +93,7 @@ what each part is doing: */
 of what each property is doing: */
 .chatbot header span {
   position: absolute;
-  right: 15px;
+  right: -165px;
   top: 50%;
   display: none;
   cursor: pointer;
