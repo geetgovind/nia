@@ -6,7 +6,7 @@ let chattagsQuestions = []; // To hold the questions data fetched from the API
 const fetchChatTags = async () => {
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/get_chattags_keywords/",
+      "http://141.148.210.185:8000/get_chattags_keywords/",
       {
         method: "GET",
         headers: {
@@ -40,7 +40,7 @@ const populateTagsDropdown = (data) => {
 const fetchChatQuestions = async () => {
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/get_chattags_questions/",
+      "http://141.148.210.185:8000/get_chattags_questions/",
       {
         method: "GET",
         headers: {
@@ -116,7 +116,7 @@ let userMessage = null;
 // Function to fetch keywords from the API
 const fetchKeywords = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/get_keywords/", {
+    const response = await fetch("http://141.148.210.185:8000/get_keywords/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -137,7 +137,7 @@ const fetchKeywords = async () => {
 // Function to fetch questions from the API
 const fetchQuestions = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/get_questions/", {
+    const response = await fetch("http://141.148.210.185:8000/get_questions/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -171,7 +171,7 @@ const createChatLi = (message, className) => {
 const generateResponse = async (chatElement) => {
   const messageElement = chatElement.querySelector("p");
   const apiUrl =
-    "http://127.0.0.1:8000/get_response/?msg=" +
+    "http://141.148.210.185:8000/get_response/?msg=" +
     encodeURIComponent(userMessage);
   try {
     const response = await fetch(apiUrl, {
